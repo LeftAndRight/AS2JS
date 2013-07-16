@@ -20,7 +20,7 @@
 			
 			private function handleInput(e:Event):void
 			{
-				outputTxt.text = inputTxt.text;
+				outputTxt.text = Converter.convert(inputTxt.text);
 			}
 			
 			

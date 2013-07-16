@@ -5,26 +5,6 @@ package
 
 	public class TestClass
 	{
-		// COMMENT
-		public var publicVar:String;
-		public const publicConst:String						= "something";
-		
-		protected var protectedVar:Object					= new Object()
-		protected const protectedConst:String				= "CONST1";
-		
-		private var privateVar:String;
-		private const privateConst:String					= "CONST2";
-		
-		static public var publicVar:String;
-		static public const publicConst:String				= "CONST3";
-		
-		static protected var protectedVar:String;
-		static protected const protectedConst:String		= "CONST4";
-		
-		static private var privateVar:String;
-		static private const privateConst:String			= "CONST5";
-		
-		
 		/*---------------------------------------------+
 		| CONSTRUCTOR								   |
 		+---------------------------------------------*/
@@ -32,7 +12,50 @@ package
 		{
 			var something:Object = new Object();
 			var somethingElse:* = new Object();
+			
+			for (var i:int = 0; i<10; i++) {
+				
+			}
+			
+			switch ("sdf") {
+				case "something":
+					
+					break;
+			}
+			
 		}
+		
+		// COMMENT
+		
+		/*---------------------------------------------+
+		| NORMAL PROPERTIES							   |
+		+---------------------------------------------*/
+		public var publicVar:Object							= new Object();
+		public const publicConst:String						= "something";
+		
+		public var publicVar2:String;
+		public const publicConst2:String						= "something2";
+		
+		protected var protectedVar:Object					= new Object()
+		protected const protectedConst:String				= "CONST1";
+		
+		private var privateVar:String;
+		private const privateConst:String					= "CONST2";
+		
+		internal var internalVar:String;
+		internal const internalConst:String					= "CONST3";
+		
+		static public var publicVar:String;
+		static public const publicConst:String				= "CONST4";
+		
+		static protected var protectedVar:String;
+		static protected const protectedConst:String		= "CONST5";
+		
+		static private var privateVar:String;
+		static private const privateConst:String			= "CONST6";
+		
+		
+		
 		
 		/*---------------------------------------------+
 		| NORMAL METHODS							   |
