@@ -1,4 +1,6 @@
 AS2JS
 =====
 
-Assists converting ActionScript code to Backbone
+Adobe AIR App that assists in converting ActionScript 3 classes to JavaScript ones.
+
+- In Development
