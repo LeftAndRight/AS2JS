@@ -1,4 +1,4 @@
 AS2JS
 =====
 
-Utility to convert ActionScript to JavaScript
+Utility to assist porting ActionScript classes to JavaScript ones.
