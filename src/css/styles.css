@@ -1,0 +1,24 @@
+*, *:after, *:before 	{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body {
+	margin: 10px 10px !important;
+	padding: 0 !important;
+	font-family: Consolas, Courier, monospace;
+	font-size: 12px !important;
+}
+textarea, label {
+	margin: 0;
+	color:#333333;
+	font-size: 12px !important;
+}
+.mainHolder {
+	margin: 0 auto;
+}
+.subHolder {
+	width:49.5%;
+	display: inline-block;
+}
+.input, .output {
+	width: 100%;
+	font-family: Consolas, Courier, monospace;
+	color:#333333;
+}

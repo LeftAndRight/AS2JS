@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AS2JS Converter</title>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<link rel="stylesheet" href="css/styles.css" />
+	<script type="text/javascript" src="js/converter.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			function handleResize() {
+				var winHeight = $(window).height();
+				var inputHeight = $(".subHolder label").height();
+				var textareaHeight = winHeight-inputHeight-50;
+				$(".subHolder textarea").height(textareaHeight);
+			}
+
+			function formatCode() {
+				$("#output").val(convert($("#input").val()));
+			}
+
+			var input = $("#input");
+
+			input.keyup($.proxy(formatCode, this));
+			$(window).resize(handleResize);
+
+			input.scroll(function() {
+				$("#output").scrollTop($("#input").scrollTop());
+			});
+
+			handleResize();
+		});
+	</script>
+</head>
+<body>
+<div class="mainHolder">
+	<div class="subHolder">
+		Input
+		<textarea id="input" class="input" wrap="off"></textarea>
+	</div>
+	<div class="subHolder">
+		Output
+		<textarea id="output" class="output" wrap="off"></textarea>
+	</div>
+</div>
+</body>
+</html>
