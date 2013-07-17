@@ -27,7 +27,6 @@
 			private function handleInput(e:Event):void
 			{
 				outputTxt.text 	= Converter.convert(inputTxt.text);
-				inputTxt.text	= inputTxt.text.replace(/static/g, "\rstatic");
 			}
 			
 			private function autoLoadClass():void
@@ -49,7 +48,7 @@
 		</mx:VBox>
 		<mx:VBox width="100%" height="100%" verticalGap="0">
 			<mx:Label text="Output" />
-			<mx:TextArea id="outputTxt" width="100%" height="100%" verticalScrollPolicy="off" verticalScrollPosition="{inputTxt.verticalScrollPosition}" />
+			<mx:TextArea id="outputTxt" width="100%" height="100%" verticalScrollPosition="{inputTxt.verticalScrollPosition}" />
 		</mx:VBox>
 	</mx:HBox>
 </mx:WindowedApplication>

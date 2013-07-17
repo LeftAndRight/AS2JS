@@ -14,18 +14,87 @@ package
 			var somethingElse:* = new Object();
 			
 			for (var i:int = 0; i<10; i++) {
-				
+				var someString:String = "";
 			}
 			
 			switch ("sdf") {
 				case "something":
-					
+					var param2:Object = {};
 					break;
 			}
 			
 		}
 		
 		// COMMENT
+		
+		
+		/*---------------------------------------------+
+		| NORMAL METHODS							   |
+		+---------------------------------------------*/
+		private function privateFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
+		{
+			var something:Object = new Object();
+			var somethingElse:* = new Object();
+			
+			for (var i:int = 0; i<10; i++) {
+				var someString:String = "";
+			}
+			
+			switch ("sdf") {
+				case "something":
+					var param23:Object = {};
+					break;
+			}
+		}
+		
+		// SECOND FUNCTION
+		
+		protected function protectedFunction():void
+		{
+			var something:Object = new Object();
+			var somethingElse:* = new Object();
+			
+			for (var i:int = 0; i<10; i++) {
+				var someString:String = "";
+			}
+			
+			switch ("sdf") {
+				case "something":
+					var param2:Object = {};
+					break;
+			}
+		}
+		
+		public function publicFunction():void
+		{
+			
+		}
+		
+		static private function staticPrivateFunction():void
+		{
+			
+		}
+		
+		static protected function staticProtectedStaticFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
+		{
+			
+		}
+		
+		static public function staticPublicStaticFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
+		{
+			
+		}
+		
+		internal function internalFunction():void
+		{
+			
+		}
+		
+		internal static function staticInternalFunction():void
+		{
+			
+		}
+		
 		
 		/*---------------------------------------------+
 		| NORMAL PROPERTIES							   |
@@ -45,67 +114,32 @@ package
 		internal var internalVar:String;
 		internal const internalConst:String					= "CONST3";
 		
-		static public var publicVar:String;
-		static public const publicConst:String				= "CONST4";
+		static public var staticPublicVar:String;
+		static public const staticPublicConst:String				= "CONST4";
 		
-		static protected var protectedVar:String;
-		static protected const protectedConst:String		= "CONST5";
+		static protected var staticProtectedVar:String;
+		static protected const staticProtectedConst:String		= "CONST5";
 		
-		static private var privateVar:String;
-		static private const privateConst:String			= "CONST6";
-		
-		
-		
-		
-		/*---------------------------------------------+
-		| NORMAL METHODS							   |
-		+---------------------------------------------*/
-		private function privateFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
-		{
-			
-		}
-		
-		protected function protectedFunction():void
-		{
-			
-		}
-		
-		public function publicFunction():void
-		{
-			
-		}
-		
-		static private function privateFunction():void
-		{
-			
-		}
-		
-		static protected function protectedStaticFunction():void
-		{
-			
-		}
-		
-		static public function publicStaticFunction():void
-		{
-			
-		}
-		
-		internal function internalFunction():void
-		{
-			
-		}
-		
-		internal static function internalFunction():void
-		{
-			
-		}
+		static private var staticPrivateVar:String;
+		static private const staticConst:String			= "CONST6";
 		
 		/*---------------------------------------------+
 		| FINAL METHODS								   |
 		+---------------------------------------------*/
-		final private function privateFunctionF():void
+		final private function privateFunctionF(only1Param:Object):void
 		{
+			var something:Object = new Object();
+			var somethingElse:* = new Object();
 			
+			for (var i:int = 0; i<10; i++) {
+				var someString:String = "";
+			}
+			
+			switch ("sdf") {
+				case "something":
+					var param2:Object = {};
+					break;
+			}
 		}
 		
 		final protected function protectedFunctionF():void
@@ -120,13 +154,38 @@ package
 		
 		final internal function internalFunctionF():void
 		{
+			var something:Object = new Object();
+			var somethingElse:* = new Object();
 			
+			for (var i:int = 0; i<10; i++) {
+				var someString:String = "";
+			}
+			
+			switch ("sdf") {
+				case "something":
+					var param2:Object = {};
+					break;
+			}
 		}
 		
 		/*---------------------------------------------+
 		| GETTERS AND SETTERS						   |
 		+---------------------------------------------*/
+		public function get something():Boolean { return true; }
+		public function set something(value:Boolean):void { var temp:Boolean = value; }
 		
+		public function get somethingElse():Boolean 
+		{ 
+			return true; 
+		}
+		public function set somethingElse(value:Boolean):void 
+		{ 
+			var temp:Boolean = value;
+		}
+
+		
+		private function get somethingPrivate():Boolean { return true; }
+		private function set somethingPrivate(value:Boolean):void { var temp:Boolean = value; }
 		
 		
 	}
