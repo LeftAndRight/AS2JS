@@ -45,6 +45,11 @@ package
 					var param23:Object = {};
 					break;
 			}
+
+			// Comment tester: private function privateFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
+			/*
+			private function privateFunction(param1:MouseEvent, param2:Event = null, param3:* = 4):void
+			*/
 		}
 		
 		// SECOND FUNCTION
