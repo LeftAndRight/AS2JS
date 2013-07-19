@@ -191,28 +191,30 @@ var Converter = RootClass.extend({}, {
 		var returnComments;
 		// (param1:DataType, param2:DataType = null, param3:* = 4)
 		var params 	= retStr.match(/\(.*\)/);
-		// Individual params
-		// param1:DataType
-		params 				= params[0].match(/[a-zA-Z0-9*]*:[a-zA-Z0-9*]*/g);
-		if (params && params.length > 1) {
-			returnComments = "/**\n";
-			for (var i = 0; i<params.length; i++) {
-				var param = params[i];
-				returnComments += this.formatParam(param, false);
-				returnComments += "\n";
+		if (params){
+			// Individual params
+			// param1:DataType
+			params 				= params[0].match(/[a-zA-Z0-9*]*:[a-zA-Z0-9*]*/g);
+			if (params && params.length > 1) {
+				returnComments = "/**\n";
+				for (var i = 0; i<params.length; i++) {
+					var param = params[i];
+					returnComments += this.formatParam(param, false);
+					returnComments += "\n";
+				}
+				returnComments += " */\n";
+			} else if (params && params.length == 1) {
+				returnComments = "/** " + this.formatParam(params[0], true) + "*/\n";
 			}
-			returnComments += " */\n";
-		} else if (params && params.length == 1) {
-			returnComments = "/** " + this.formatParam(params[0], true) + "*/\n";
-		}
 
-		// Remove all data types
-		// & Assigned params eg. param1:String = x
-		retStr = retStr.replace(/:[a-zA-Z0-9* =]*/g, "");
+			// Remove all data types
+			// & Assigned params eg. param1:String = x
+			retStr = retStr.replace(/:[a-zA-Z0-9* =]*/g, "");
 
-		// Prepend Comments
-		if (returnComments != null) {
-			retStr = returnComments + retStr;
+			// Prepend Comments
+			if (returnComments != null) {
+				retStr = returnComments + retStr;
+			}
 		}
 		return retStr;
 	},
