@@ -48,11 +48,24 @@ var Converter = RootClass.extend({}, {
 			publicVar : new Object(), // Object
 		*/
 		try {
-			output = output.replace(/public var.*|public const.*|protected var.*|protected const.*|private var.*|private const.*|internal var.*|internal const.*/g, $.proxy(this.formatClassVariable, this));
+			var reg	= "public var.*";
+			reg		+= "|public const.*";
+			reg		+= "|protected var.*";
+			reg		+= "|protected const.*";
+			reg		+= "|private var.*";
+			reg		+= "|private const.*";
+			reg		+= "|internal var.*";
+			reg		+= "|internal const.*";
+			reg		+= "|private static const.*";
+			reg		+= "|public static const.*";
+			reg		+= "|protected static const.*";
+			reg		+= "|internal static const.*";
+
+			output	= output.replace(new RegExp(reg, "g"), $.proxy(this.formatClassVariable, this));
 		}catch(e){ console.error("Failed on class variables replace"); }
 
-		output = output.replace(/public var |public const /g, "");
-		output = output.replace(/protected var |protected const |private var |private const |internal var |internal const /g, "_");
+		output = output.replace(/public var |public const |public static const /g, "");
+		output = output.replace(/protected var |protected const |private var |private const |internal var |internal const |protected static const |internal static const /g, "_");
 
 		/*
 		Format Class Functions
@@ -167,17 +180,17 @@ var Converter = RootClass.extend({}, {
 
 	formatClassVariable : function (match, lineNumber, fullString)
 	{
-		var retStr 	= match;
+		var retStr		= match;
 		// Store datatype
 		var dataType	= retStr.match(/:[A-Za-z0-9*_]*/)[0].slice(1);
 		// Replace ":DataType =" with " : "
-		retStr 				= retStr.replace(/:[A-Za-z0-9*_\s]*=/, 		"			:");
+		retStr 			= retStr.replace(/:[A-Za-z0-9*_\s]*=/, 		"			:");
 		// Replace ":DataType" with " : "
-		retStr 				= retStr.replace(/:[A-Za-z0-9*_]{1,999}/, 	"			: null");
+		retStr 			= retStr.replace(/:[A-Za-z0-9*_]{1,999}/, 	"			: null");
 
-		retStr 				= retStr.replace(/;/, "");
-		retStr				+= ",";
-		retStr				+= " // " + dataType;
+		retStr 			= retStr.replace(/;/, "");
+		retStr			+= ",";
+		retStr			+= " // " + dataType;
 		return retStr;
 	},
 
