@@ -66,6 +66,7 @@ var Converter = RootClass.extend({}, {
 
 		output = output.replace(/public var |public const |public static const /g, "");
 		output = output.replace(/protected var |protected const |private var |private const |internal var |internal const |protected static const |internal static const /g, "_");
+		output = output.replace(/final /g, "");
 
 		/*
 		Format Class Functions
