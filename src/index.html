@@ -14,6 +14,8 @@
 
 	<script type="text/javascript">
 		$(function() {
+			$('head').append('<scr' + 'ipt type="text/javascript" src="js/Converter2.js?verion=' + (new Date().getTime()) + '"></scr' + 'ipt>');
+
 			function handleResize() {
 				var winHeight = $(window).height();
 				var inputHeight = $(".subHolder label").height();
