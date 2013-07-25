@@ -64,9 +64,9 @@ var Converter = RootClass.extend({}, {
 			output	= output.replace(new RegExp(reg, "g"), $.proxy(this.formatClassVariable, this));
 		}catch(e){ console.error("Failed on class variables replace"); }
 
+		// Remove the public, protected, private, internal, override, static, const prefixes
 		output = output.replace(/public var |public const |public static const /g, "");
 		output = output.replace(/protected var |protected const |private var |private const |internal var |internal const |protected static const |internal static const /g, "_");
-		output = output.replace(/final /g, "");
 
 		/*
 		Format Class Functions
@@ -77,9 +77,12 @@ var Converter = RootClass.extend({}, {
 		function _protectedFunction():void
 		*/
 		output = output.replace(/public function/g, "function");
+		output = output.replace(/public static function /g, "static function ");
+
 		output = output.replace(/private function |protected function |internal function /g, "function _");
 		output = output.replace(/internal static function |public static function |private static function |protected static function /g, "static function _");
 		output = output.replace(/public function/g, "function");
+		output = output.replace(/final |override /g, "");
 
 		/*
 		Annotate Statics
